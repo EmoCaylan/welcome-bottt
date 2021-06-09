@@ -13,10 +13,10 @@ let config = new YAML(fs.readFileSync("./config.yaml").toString()).json
 
 console.log(config.server)
 
-client.login(prcoess.env.token).then(() => console.log(`[${client.user.tag}] Başarıyla Giriş yaptım!`)).catch(() => console.error(`Yanlış Bir Token Girdiniz.`))
+client.login(process.env.token).then(() => console.log(`[${client.user.tag}] Başarıyla Giriş yaptım!`)).catch(() => console.error(`Yanlış Bir Token Girdiniz.`))
 
 client.on("ready", () => {
-      client.user.setPresence({ activity: { name: `Pirates ❤️` , type: "PLAYING"}, status: 'idle' })
+      client.user.setPresence({ activity: { name: `⛧ Weis Welcome ❤️` , type: "PLAYING"}, status: 'idle' })
     let vc = client.channels.cache.get(config.server.voiceChannel)
     if (!vc) throw console.error("Config.yaml da voiceChannel için bir ses kanal idi girmelisiniz.")
     if (!vc instanceof VoiceChannel) throw new TypeError("Belirttiğiniz kanal bir ses kanalı değil")
